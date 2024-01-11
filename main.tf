@@ -54,6 +54,7 @@ resource "aws_instance" "web" {
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
+  vpc_id      = aws_vpc.main.id
   ingress {
     from_port   = 8080
     to_port     = 8080
